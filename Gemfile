@@ -56,10 +56,10 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
   gem 'dotenv-rails', '~> 2.8.1'
+  gem 'faker'
   gem 'pry', '~> 0.14.1'
   gem 'rspec-mocks', '~> 3.12.6'
   gem 'rspec-rails', '~> 6.1.0'
-  gem 'faker'
 end
 
 group :development do
@@ -71,6 +71,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'brakeman'
   gem 'bundler-audit'
   gem 'hotwire-livereload'
   gem 'htmlbeautifier'
@@ -80,8 +81,11 @@ group :development do
   gem 'rack-mini-profiler', '~> 3.1'
   gem 'reek', '~> 1.3'
   gem 'rubocop', '~> 1.57'
+  gem 'rubocop-capybara', require: false
+  gem 'rubocop-factory_bot', require: false
   gem 'rubocop-performance', '~> 1.19'
-  gem 'rubocop-rails', '~> 2.22'
+  gem 'rubocop-rails', '~> 2.22', require: false
+  gem 'rubocop-rspec', require: false
   gem 'ruby-lsp-rails'
 end
 
