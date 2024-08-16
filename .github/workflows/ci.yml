@@ -20,10 +20,7 @@ jobs:
           bundler-cache: true
 
       - name: Scan for common Rails security vulnerabilities using static analysis
-        run: |
-          ls -la
-          ls -la bin
-          bin/brakeman --no-pager
+        run: bin/brakeman --no-pager
 
 
   scan_js:
@@ -94,7 +91,7 @@ jobs:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
           # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:test:prepare test test:system
+        run: bin/rails db:test:prepare db:migrate test test:system
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
