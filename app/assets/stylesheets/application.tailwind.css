@@ -11,3 +11,16 @@
 }
 
 */
+@layer components {
+  .field > input:not([type="checkbox"]) {
+    @apply rounded-md w-full
+  }
+
+  .actions>input[type="submit"]{
+  @apply w-full py-1 px-2 border border-blue-600 bg-blue-500 rounded-md text-slate-50 hover:bg-blue-200 hover:text-blue-600 transition-all hover:border-blue-300
+  }
+  
+  .card {
+  @apply border shadow-sm p-4  rounded-lg
+  }
+}
